@@ -1,1 +1,8 @@
     textBox2.Text = ds.Tables[0].Rows[0][0].ToString();
+    ....................................................................//连接数据库并且读取其中的某个表，用datgridview显示出来
+    SqlConnection conn;//声明一个sqlconnection变量
+    conn = new SqlConnection(@"server=DESKTOP-P85DE3D\SA;database=db_PWMS;user=sa;pwd=sajndx";
+    SqlDataAdapter sda = new SqlDataAdapter("select * from tb_Stuffbusic", conn);
+    DataSet ds = new DataSet();
+    sda.Fill(ds);
+    dataGridView1.DataSource = ds.Tables[0];
